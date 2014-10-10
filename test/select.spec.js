@@ -71,7 +71,7 @@ describe('ui-select tests', function() {
 
     return compileTemplate(
       '<ui-select ng-model="selection.selected"' + attrsHtml + '> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -252,7 +252,7 @@ describe('ui-select tests', function() {
 
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match>{{$select.selected}}</ui-select-match> \
+        <ui-select-match>{{$select.match}}</ui-select-match> \
         <ui-select-choices repeat="item in items | filter: $select.search"> \
           <div ng-bind-html="item | highlight: $select.search"></div> \
         </ui-select-choices> \
@@ -279,7 +279,7 @@ describe('ui-select tests', function() {
 
       return compileTemplate(
         '<ui-select ng-model="selection.selected"> \
-          <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+          <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
           <ui-select-choices repeat="person in people | filter: $select.search"' + attrsDisabled + '> \
             <div ng-bind-html="person.name | highlight: $select.search"></div> \
             <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -431,7 +431,7 @@ describe('ui-select tests', function() {
     function createUiSelect() {
       return compileTemplate(
           '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices group-by="\'group\'" repeat="person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -481,7 +481,7 @@ describe('ui-select tests', function() {
     function createUiSelect() {
       return compileTemplate(
         '<ui-select ng-model="selection.selected"> \
-      <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+      <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
       <ui-select-choices group-by="getGroupLabel" repeat="person in people | filter: $select.search"> \
         <div ng-bind-html="person.name | highlight: $select.search"></div> \
       </ui-select-choices> \
@@ -540,7 +540,7 @@ describe('ui-select tests', function() {
   it('should format the model correctly using alias', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person as person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -554,7 +554,7 @@ describe('ui-select tests', function() {
   it('should parse the model correctly using alias', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person as person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -569,7 +569,7 @@ describe('ui-select tests', function() {
   it('should format the model correctly using property of alias', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -583,7 +583,7 @@ describe('ui-select tests', function() {
   it('should parse the model correctly using property of alias', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -598,7 +598,7 @@ describe('ui-select tests', function() {
   it('should parse the model correctly using property of alias with async choices data', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in peopleAsync | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -622,7 +622,7 @@ describe('ui-select tests', function() {
   it('should parse the model correctly using property of alias but passed whole object', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -650,7 +650,7 @@ describe('ui-select tests', function() {
   it('should display choices correctly with child array', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person in someObject.people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -665,7 +665,7 @@ describe('ui-select tests', function() {
   it('should format the model correctly using property of alias and when using child array for choices', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in someObject.people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -684,7 +684,7 @@ describe('ui-select tests', function() {
     };
     var el = compileTemplate(
       '<ui-select on-select="onSelectFn($item, $model)" ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -712,7 +712,7 @@ describe('ui-select tests', function() {
 
     var el = compileTemplate(
       '<ui-select on-select="onSelectFn($item, $model)" ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -737,7 +737,7 @@ describe('ui-select tests', function() {
 
     var el = compileTemplate(
       '<ui-select multiple on-remove="onRemoveFn($item, $model)" ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in people | filter: $select.search"> \
           <div ng-bind-html="person.name" | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -766,7 +766,7 @@ describe('ui-select tests', function() {
 
     var el = compileTemplate(
       '<ui-select multiple on-remove="onRemoveFn($item, $model)" ng-model="selection.selected"> \
-        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person in people | filter: $select.search"> \
           <div ng-bind-html="person.name" | highlight: $select.search"></div> \
           <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -790,8 +790,8 @@ describe('ui-select tests', function() {
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
         <ui-select-match> \
-          <span ng-if="$select.selected.name!==\'Wladimir\'">{{$select.selected.name}}</span>\
-          <span ng-if="$select.selected.name===\'Wladimir\'">{{$select.selected.name | uppercase}}</span>\
+          <span ng-if="$select.match.name!==\'Wladimir\'">{{$select.match.name}}</span>\
+          <span ng-if="$select.match.name===\'Wladimir\'">{{$select.match.name | uppercase}}</span>\
         </ui-select-match> \
         <ui-select-choices repeat="person in people | filter: $select.search"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
@@ -887,7 +887,7 @@ describe('ui-select tests', function() {
 
     var el = compileTemplate(
       '<ui-select ng-model="selection.selected"> \
-        <ui-select-match>{{$select.selected.name}}</ui-select-match> \
+        <ui-select-match>{{$select.match.name}}</ui-select-match> \
         <ui-select-choices repeat="person.name as person in people | filter: $select.search" \
           refresh="fetchFromServer($select.search)" refresh-delay="0"> \
           <div ng-bind-html="person.name | highlight: $select.search"></div> \
@@ -925,7 +925,7 @@ describe('ui-select tests', function() {
     function setupSelectComponent(searchEnabled, theme) {
       el = compileTemplate(
         '<ui-select ng-model="selection.selected" theme="' + theme + '" search-enabled="' + searchEnabled + '"> \
-          <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match> \
+          <ui-select-match placeholder="Pick one...">{{$select.match.name}}</ui-select-match> \
           <ui-select-choices repeat="person in people | filter: $select.search"> \
             <div ng-bind-html="person.name | highlight: $select.search"></div> \
             <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -993,7 +993,7 @@ describe('ui-select tests', function() {
 
         return compileTemplate(
             '<ui-select multiple ng-model="selection.selectedMultiple"' + attrsHtml + ' theme="bootstrap" style="width: 800px;"> \
-                <ui-select-match placeholder="Pick one...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match> \
+                <ui-select-match placeholder="Pick one...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match> \
                 <ui-select-choices repeat="person in people | filter: $select.search"> \
                   <div ng-bind-html="person.name | highlight: $select.search"></div> \
                   <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -1030,7 +1030,7 @@ describe('ui-select tests', function() {
         var el = createUiSelectMultiple();
         expect(el.scope().$select.selected.length).toBe(2);
         el.find('.ui-select-match-item').first().find('.ui-select-match-close').click();
-        expect(el.scope().$select.selected.length).toBe(1);
+        expect(el.scope().$select.match.length).toBe(1);
         // $timeout.flush();
     });
 
@@ -1289,7 +1289,7 @@ describe('ui-select tests', function() {
 
       var el = compileTemplate(
           '<ui-select multiple ng-model="selection.selectedMultiple" theme="bootstrap" style="width: 800px;"> \
-              <ui-select-match placeholder="Pick one...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match> \
+              <ui-select-match placeholder="Pick one...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match> \
               <ui-select-choices repeat="person.email as person in people | filter: $select.search"> \
                 <div ng-bind-html="person.name | highlight: $select.search"></div> \
                 <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -1307,7 +1307,7 @@ describe('ui-select tests', function() {
 
       var el = compileTemplate(
           '<ui-select multiple ng-model="selection.selectedMultiple" theme="bootstrap" style="width: 800px;"> \
-              <ui-select-match placeholder="Pick one...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match> \
+              <ui-select-match placeholder="Pick one...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match> \
               <ui-select-choices repeat="person.email as person in people | filter: $select.search"> \
                 <div ng-bind-html="person.name | highlight: $select.search"></div> \
                 <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -1330,7 +1330,7 @@ describe('ui-select tests', function() {
 
       var el = compileTemplate(
           '<ui-select multiple ng-model="selection.selectedMultiple" theme="bootstrap" style="width: 800px;"> \
-              <ui-select-match placeholder="Pick one...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match> \
+              <ui-select-match placeholder="Pick one...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match> \
               <ui-select-choices repeat="person.email as person in people | filter: $select.search" \
                 refresh="fetchFromServer($select.search)" refresh-delay="0"> \
                 <div ng-bind-html="person.name | highlight: $select.search"></div> \
@@ -1371,7 +1371,7 @@ describe('ui-select tests', function() {
 
       var el = compileTemplate(
           '<ui-select multiple ng-model="selection.selectedMultiple" theme="bootstrap" style="width: 800px;"> \
-              <ui-select-match placeholder="Pick one...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match> \
+              <ui-select-match placeholder="Pick one...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match> \
               <ui-select-choices repeat="person.email as person in people | filter: $select.search"> \
                 <div ng-bind-html="person.name | highlight: $select.search"></div> \
                 <div ng-bind-html="person.email | highlight: $select.search"></div> \
@@ -1400,7 +1400,7 @@ describe('ui-select tests', function() {
 
       var el = compileTemplate(
           '<ui-select ng-change="onlyOnce()" multiple ng-model="selection.selectedMultiple" theme="bootstrap" style="width: 800px;"> \
-              <ui-select-match placeholder="Pick one...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match> \
+              <ui-select-match placeholder="Pick one...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match> \
               <ui-select-choices repeat="person.email as person in people | filter: $select.search"> \
                 <div ng-bind-html="person.name | highlight: $select.search"></div> \
                 <div ng-bind-html="person.email | highlight: $select.search"></div> \

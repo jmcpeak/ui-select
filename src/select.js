@@ -148,6 +148,7 @@
     ctrl.activeMatchIndex = -1;
     ctrl.items = [];
     ctrl.selected = undefined;
+	ctrl.match = undefined;
     ctrl.open = false;
     ctrl.focus = false;
     ctrl.focusser = undefined; //Reference to input element used to handle focus events  
@@ -333,8 +334,10 @@
         if(ctrl.multiple){
           ctrl.selected.push(item);
           ctrl.sizeSearchInput();
+		  ctrl.match = item;
         } else {
           ctrl.selected = item;
+		  ctrl.match = ctrl.selected;
         }
         ctrl.close();
       }

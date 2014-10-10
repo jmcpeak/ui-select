@@ -68,7 +68,7 @@
              ng-disabled="disabled"
              reset-search-input="false"
              style="width: 300px;">
-    <ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+    <ui-select-match placeholder="Enter an address...">{{$select.match.formatted_address}}</ui-select-match>
     <ui-select-choices repeat="address in addresses track by $index"
              refresh="refreshAddresses($select.search)"
              refresh-delay="0">
@@ -79,7 +79,7 @@
 
   <h3>Multi select</h3>
   <ui-select multiple ng-model="friends" theme="bootstrap" ng-disabled="disabled" style="width: 300px;">
-    <ui-select-match placeholder="Search and select friends...">{{$item.name}}</ui-select-match>
+    <ui-select-match placeholder="Search and select friends...">{{$select.match.name}}</ui-select-match>
     <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
       <div ng-bind-html="person.name | highlight: $select.search"></div>
       <small>
@@ -90,7 +90,7 @@
   <p>Selected: {{friends|json}}</p>
  -->
 <!--   <ui-select ng-model="person.selected" theme="select2" ng-disabled="disabled" style="min-width: 300px;">
-    <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+    <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.match.name}}</ui-select-match>
     <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
       <div ng-bind-html="person.name | highlight: $select.search"></div>
       <small>
@@ -102,7 +102,7 @@
   <p>Selected: {{person.selected}}</p> -->
 <!--   <h1>Selectize theme</h1>
   <ui-select ng-model="country.selected" theme="selectize" ng-disabled="disabled" style="width: 300px;">
-    <ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>
+    <ui-select-match placeholder="Select or search a country in the list...">{{$select.match.name}}</ui-select-match>
     <ui-select-choices repeat="country in countries | filter: $select.search">
       <span ng-bind-html="country.name | highlight: $select.search"></span>
       <small ng-bind-html="country.code | highlight: $select.search"></small>
@@ -114,7 +114,7 @@
 
   <h3>Array of strings</h3>
   <ui-select multiple ng-model="multipleDemo.colors" theme="bootstrap" ng-disabled="disabled" style="width: 300px;">
-    <ui-select-match placeholder="Select colors...">{{$item}}</ui-select-match>
+    <ui-select-match placeholder="Select colors...">{{$select.match}}</ui-select-match>
     <ui-select-choices repeat="color in availableColors | filter:$select.search">
       {{color}}
     </ui-select-choices>
@@ -123,7 +123,7 @@
   <hr>
   <h3>Array of objects</h3>
   <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="disabled" style="width: 800px;">
-    <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+    <ui-select-match placeholder="Select person...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match>
     <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
       <div ng-bind-html="person.name | highlight: $select.search"></div>
       <small>
@@ -137,7 +137,7 @@
   <hr>
   <h3>Deselect callback with single property binding</h3>
   <ui-select multiple ng-model="multipleDemo.deSelectedPeople" on-remove="removed($item, $model)" theme="bootstrap" ng-disabled="disabled" style="width: 800px;">
-    <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+    <ui-select-match placeholder="Select person...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match>
     <ui-select-choices repeat="person.email as person in people | propsFilter: {name: $select.search, age: $select.search}">
       <div ng-bind-html="person.name | highlight: $select.search"></div>
       <small>
@@ -152,7 +152,7 @@
   <hr>
   <h3>Array of objects with single property binding</h3>
   <ui-select multiple ng-model="multipleDemo.selectedPeopleSimple" theme="bootstrap" ng-disabled="disabled" style="width: 800px;">
-    <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+    <ui-select-match placeholder="Select person...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match>
     <ui-select-choices repeat="person.email as person in people | propsFilter: {name: $select.search, age: $select.search}">
       <div ng-bind-html="person.name | highlight: $select.search"></div>
       <small>
@@ -166,7 +166,7 @@
   <hr>
   <h3>Array of objects (with groupBy)</h3>
   <ui-select multiple ng-model="multipleDemo.selectedPeopleWithGroupBy" theme="bootstrap" ng-disabled="disabled" style="width: 800px;">
-    <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+    <ui-select-match placeholder="Select person...">{{$select.match.name}} &lt;{{$select.match.email}}&gt;</ui-select-match>
     <ui-select-choices group-by="someGroupFn" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
       <div ng-bind-html="person.name | highlight: $select.search"></div>
       <small>
